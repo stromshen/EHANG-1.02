@@ -1,0 +1,108 @@
+.wrap-main {
+    position: relative;
+    width: 100%;
+    /* min-width: 1200px; */
+    background: #f5f5f6;
+    overflow: hidden;
+}
+.help-box{
+   min-width: 970px;
+}
+.sub-banner img{
+  width: 100%;
+  height: 100%;
+}
+.help-box{
+  width: 1170px;
+  height: 440px;
+  padding: 126px 15px 0px 15px;
+  margin: 0 auto;
+}
+.help-list{
+  height: 105px;
+  margin-bottom: 104px;
+  display: flex;
+}
+.col-sm-3{
+  width: 261.5px;
+  height: 105px;
+  padding: 0px 15px;
+  display: flex;
+}
+.col-sm-3 a{
+  width: 100%;
+  height: 50px;
+  padding-top: 55px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  text-align: center;
+  font-size: 13px;
+  border-right: 1px solid rgb(194, 194, 194);
+}
+.col-sm-3>a div{
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+.b1{
+  background-image: url(../img/support/b4.png);
+}
+.b2{
+  background-image: url(../img/support/b1.png);
+}
+.b3{
+  background-image: url(../img/support/b2.png);
+}
+.b4{
+  background-image: url(../img/support/b3.png);
+}
+.online-box{
+  width: 1200px;
+  height: 102px;
+  /* margin-bottom: 100px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col-sm-5{
+  width: 370px;
+  height: 72px;
+}
+.customer-service{
+  display: flex;
+  justify-content: center;
+}
+.customer-content{
+  height: 92px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.icon-online{
+  width: 70px;
+  height: 69px;
+  background-image: url(../img/support/kf1.png);
+}
+.icon-email{
+  width: 69px;
+  height: 69px;
+  background-image: url(../img/support/kf3.png);
+}
+.icon-tell{
+  width: 70px;
+  height: 69px;
+  background-image: url(../img/support/kf2.png);
+}
+.customer-content strong{
+  font-size: 18px;
+  font-weight: 400;
+}
+.color-089cef{
+  padding: 5px 0px;
+  color: rgb(8, 156, 239);
+}
+.f18{
+  font-size: 18px;
+  font-weight: 500;
+}
+.p1{
+  font-size: 13px;
+}

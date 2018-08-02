@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/product_details.css">
+  </head>
+  <body>
+    <script src="js/jquery.min.js"></script>
+    <!-- 商品页头部 -->
+    <div class="mall-header"></div>
+    <!-- 商品详情页内容 -->
+    <div class="wrapper">
+      <div class="breadcrumb">
+        <a class="settings-link_color" href="mall_index.html" title="亿航(EHANG)官方商城">首页</a>
+        <span class="breadcrumb-split">></span>
+        <span class="breadcrumb-current">
+          <a href="products.html">所有商品</a>
+        </span>
+        <span class="breadcrumb-split">></span>
+        <span class="breadcrumb-current" id="breadcrumb-lid"></span>
+      </div>
+    </div>
+    <!-- 商品描述 -->
+    <div class="eh-wrap">
+      <div class="eh-pro-detail">
+      <!-- 图片展示 -->
+        <div class="eh-pro-img-wrap">
+          <div class="eh-pro-image">
+            <img src="img/mall/products/a1.png" alt="">
+          </div>
+          <div class="eh-thumb-img-wrap">
+            <div class="eh-thumb-img">
+              <!-- <div class="eh-thumb-img-item current">
+                <img src="img/mall/products/a1.png" alt="">
+              </div>
+              <div class="eh-thumb-img-item">
+                <img src="img/mall/products/a2.png" alt="">
+              </div>
+              <div class="eh-thumb-img-item">
+                <img src="img/mall/products/a3.png" alt="">
+              </div>
+              <div class="eh-thumb-img-item">
+                <img src="img/mall/products/a4.png" alt="">
+              </div>
+              <div class="eh-thumb-img-item">
+                <img src="img/mall/products/a5.png" alt="">
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- 商品文字介绍 -->
+        <div class="eh-pro-info">
+          <div class="eh-pro-info-top">
+            <!-- <h2 class="eh-pro-title">GHOSTDRONE2.0 《南方有乔木》定制版</h2>
+            <div class="eh-pro-short-desc">智能操控  南乔同款专制（iOS版本）</div>
+            <div class="eh-pro-info-price">
+					    <span>现价</span>
+              <span class="price-fuhao">￥</span>
+						  <span class="price-strong" id="yhsd_variantSelector_price">6999</span>
+            </div>
+            <div class="eh-pro_detail-info-discount" id="yhsd_productDiscount">
+				      <a class="settings-link_color" href="#">
+                全场满168元包邮（不包含新疆、西藏、台湾、香港、澳门）
+              </a>
+            </div> -->
+          </div>
+          <!-- 动态选择商品规格 -->
+          <div class="pro_detail-info-sub">
+            <div class="pro-detail-sub-each" id="clearfix-1">
+              <!-- <h3>版本</h3>
+              <div class="pro-detail-sub-each-wrap clearfix">
+                IOS
+              </div> -->
+            </div>
+            <div class="pro-detail-sub-each " id="clearfix-2">
+              <!-- <h3>颜色</h3>
+              <div class="pro-detail-sub-each-wrap clearfix">
+                黑色
+              </div> -->
+            </div>
+          </div>
+          <!-- 选择商品数量 -->
+          <div class="eh-pro-info-number">
+            <span class="eh-pro-num-txt">数量</span>
+            <a class="eh-pro-info-number-a" href="#" id="yhsd_variantSelector_reduce">-</a>
+            <input class="eh-pro-info-number-ipt" type="text" value="1" id="yhsd_variantSelector_count">
+            <a class="eh-pro-info-number-a" href="#" id="yhsd_variantSelector_add">+</a>
+            <span class="eh-pro-stock">
+              库存
+              <span id="yhsd_variantSelector_stock">0</span>
+              件
+            </span>
+          </div>
+          <!-- 立即购买按钮 -->
+          <div class="pro-detail-addBtn">
+				    <a class="eh-pro-btn eh-btn-buynow" id="yhsd_variantSelector_addCart" href="#">加入购物车</a>
+				   <!--加入购物车提示-->
+    				<div id="yhsd_variantSelector_addSucc" class="pro_detail-info-addSucc--wrap">
+    					<div class="pro_detail-info-addSucc">
+    						<span class="pro_detail-info-addSucc-hint">添加成功！</span>
+    						<a class="pro_detail-info-addSucc-goCart" href="/cart">去购物车结算</a>
+    						<a class="pro_detail-info-addSucc-close" href="#" id="yhsd_variantSelector_addSuccClose">关闭</a>
+    					</div>
+    				</div>
+			    </div>
+        </div>
+      </div>
+    </div>
+    <!-- 尾部 -->
+    <div class="mall-footer"></div>
+    <script>
+        $('.mall-header').load('mall_header.html');
+        $('.mall-footer').load('footer.html');
+    </script>
+    <script src="js/ajax.js"></script>
+    <script src="js/product_details.js"></script>
+    <script type="text/javascript">
+      $(".eh-thumb-img").on("click",".current",function(){
+		    var i=$(this).index()-3;
+		    if(i<=3){
+			    $(".eh-thumb-img").animate({left:-i * 110 },500);
+          $(this).next().addClass("current").siblings().removeClass("current");
+          $(".eh-thumb-img-item").next().addClass("eh-thumb-img-item").siblings().removeClass("eh-thumb-img-item");
+		    }
+      });
+      $(".eh-thumb-img").on("click",".eh-thumb-img-item",function(){
+		    var y=$(this).index()-1;
+		    if(y>=0){
+			    $(".eh-thumb-img").animate({left:-y *110},500);
+          $(this).prev().addClass("eh-thumb-img-item").siblings().removeClass("eh-thumb-img-item");
+          $(".current").prev().addClass("current").siblings().removeClass("current");
+		    }
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+<!--  -->

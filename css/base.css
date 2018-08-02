@@ -1,0 +1,22 @@
+body, input, textarea, button, select {
+    font-family: "Arial","é»‘ä½“","Gotham", "Helvetica Neue", "Hiragino Sans GB",sans-serif !important;
+    margin:0;
+    padding:0;
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    font-size: 13px;
+    color:rgb(64,64,64);
+    text-decoration:none;
+}
+
+img{
+    vertical-align:middle;
+}
+body{
+  background-color: #F3F3F3;
+}

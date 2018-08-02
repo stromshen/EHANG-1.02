@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .ds{
+        width: 550px;
+        height: 110px;
+        border: 1px solid rgba(67,197,238,1);
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .u1{
+        width: 1000px;
+        position: relative;
+        left: 0px;
+      }
+      .u1 li{
+        width: 98px;
+        height: 96px;
+        list-style: none;
+        background: pink;
+        border: 1px solid #fff;
+        float: left;
+        margin: 5px 5px 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ds">
+      <ul class="u1">
+        <li class=ss>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="active">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+      </ul>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+      $(".u1").on("click",".active",function(){
+		    var i=$(this).index()-3;
+		    if(i<4){
+			    $(".u1").animate({left:-i * 110 },500);
+          $(this).next().addClass("active").siblings().removeClass("active");
+          $(".ss").next().addClass("ss").siblings().removeClass("ss");
+		    }
+      });
+      $(".u1").on("click",".ss",function(){
+		    var y=$(this).index()-1;
+		    if(y>=0){
+			    $(".u1").animate({left:-y *110},500);
+          $(this).prev().addClass("ss").siblings().removeClass("ss");
+          $(".active").prev().addClass("active").siblings().removeClass("active");
+		    }
+      });
+    </script>
+  </body>
+<html>

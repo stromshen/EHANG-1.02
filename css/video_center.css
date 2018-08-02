@@ -1,0 +1,118 @@
+.video-section{
+  position: relative;
+    width: 100%;
+    height: 700px;
+    background-image: url(../img/video_center/video-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.video-title {
+	margin: 0 0px 70px;
+	padding-top: 70px;
+	text-align: center;
+}
+.video-title h3 {
+	color: #fff;
+	font-size: 30px;
+  padding-bottom: 5px;
+  font-weight: 400;
+}
+.video-title span {
+	font-family:"Helvetica", arial;
+	color: #fff;
+	font-size: 26px;
+	opacity: 0.6;
+}
+.video-cate {
+	position: relative;
+	z-index: 2;
+	width: 1200px;
+	height: 300px;
+	margin: 0 auto !important;
+	padding: 0;
+	list-style: none;
+	box-sizing: content-box;
+}
+.video-cate li {
+	position: relative;
+	display: inline-block;
+	width: 224px;
+	height: 335px;
+  margin: 0px 3px;
+	border: 3px solid #737373;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.5s;
+	background-color: #1c1c1c;
+	box-shadow: 0 8px 8px rgba(3,3,3,0.5);
+}
+.video-cate li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration:none
+}
+.video-cate li img {
+  width: 224px;
+  height: 260px;
+}
+.grid-title {
+	width: 184px;
+	height: 46px;
+	padding: 12px 20px;
+	position: relative;
+	color: #474747;
+}
+.grid-title h3 {
+	color: #fff;
+	font-size: 20px;
+  font-weight: 400;
+	line-height: 30px;
+	opacity: 0.6;
+	transition: all .5s;
+}
+.grid-title .arrow {
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -13px;
+	border-radius: 50%;
+	background-color: transparent;
+	background-image: url(../img/video_center/arrow-right.png);
+	background-repeat: no-repeat;
+	opacity: 0.6;
+	transition: all .5s;
+	transform: translateX(10px);
+}
+.video-cate li:after{
+	content: "";
+	display: inline-block;
+	width: 100%;
+	height: 260px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.6;
+	transition: all 0.5s;
+	pointer-events: none;
+}
+.active{
+  border-color: #049ded!important;
+  transform: translateY(-30px);
+}
+.video-cate li.active:after {
+	opacity: 0;
+}
+.active .grid-title .arrow {
+	opacity: 1;
+	background-color: #049ff1;
+	transform: translateX(0px);
+}
+.active .grid-title h3 {
+	opacity: 1;
+}
