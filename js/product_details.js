@@ -12,6 +12,7 @@
       var html3="";
       var html4="";
       var html5="";
+      var html6="";
       var a=0;
       var b=0;
       var c=0;
@@ -22,15 +23,17 @@
         var img=shop_img.split("^");
         var system=shop_system.split("^");
         var color=shop_color.split("^");
-        console.log(color);
         if(id==lid){
           html1+=`${shop_title}`
         };
+        if(id==lid){
+          html6+=`<img src="${img[0]}" alt="">`
+        }
         if(a<5 && id==lid){
           for (var i = 0; i < img.length; i++) {
             img[i]
             a++;
-            if(i==0){html2+=`<div class="eh-thumb-img-item">
+            if(i==0){html2+=`<div class="eh-thumb-img-item img-border">
                                 <img src="${img[i]}" alt="">
                              </div>`
             }else if(i==4){
@@ -60,28 +63,46 @@
         };
         if(id==lid){
           if(system[0]!=""){
-            html4+=`<h3>版本</h3>`
+            html4+=`<div class="pro-detail-sub-each" id="clearfix-1">
+              <h3>版本</h3>`;
             for (var i1 = 0; i1 < system.length; i1++) {
-              html4+=`<div class="pro-detail-sub-each-wrap clearfix">
-                ${system[i1]}
-              </div>`
+              if(i1==0){
+                    html4+=`<div class="pro-detail-sub-each-wrap clearfix">
+                      ${system[i1]}
+                    </div>`;
+              }else{
+                html4+=`<div class="pro-detail-sub-each-wrap">
+                  ${system[i1]}
+                </div>`;
+              }
             }
+            html4+=`</div>`;
           }
           if(color[0]!=""){
-            html5+=`<h3>颜色</h3>`
+            html4+=`<div class="pro-detail-sub-each" id="clearfix-2">
+              <h3>颜色</h3>`;
             for (var i2 = 0; i2 < color.length; i2++) {
-              html4+=`<div class="pro-detail-sub-each-wrap clearfix">
-                ${color[i2]}
-              </div>`
+              if(i2==0){
+                    html4+=`<div class="pro-detail-sub-each-wrap clearfix">
+                      ${color[i2]}
+                    </div>`;
+              }else{
+                html4+=`<div class="pro-detail-sub-each-wrap">
+                  ${color[i2]}
+                </div>`;
+              }
             }
+            html4+=`</div>`;
           }
+          html5+=`${shop_inventory}`;
         };
       })
       document.querySelector("#breadcrumb-lid").innerHTML=html1;
       document.querySelector(".eh-thumb-img").innerHTML=html2;
       document.querySelector(".eh-pro-info-top").innerHTML=html3;
-      document.querySelector("#clearfix-1").innerHTML=html4;
-      document.querySelector("#clearfix-2").innerHTML=html5;
+      document.querySelector(".pro_detail-info-sub").innerHTML=html4;
+      document.querySelector("#yhsd_variantSelector_stock").innerHTML=html5;
+      document.querySelector(".eh-pro-image").innerHTML=html6;
     }
   })
 })();

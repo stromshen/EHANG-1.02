@@ -28,10 +28,10 @@
       <!-- 图片展示 -->
         <div class="eh-pro-img-wrap">
           <div class="eh-pro-image">
-            <img src="img/mall/products/a1.png" alt="">
+            <!-- <img src="img/mall/products/a1.png" alt=""> -->
           </div>
           <div class="eh-thumb-img-wrap">
-            <div class="eh-thumb-img">
+            <div class="eh-thumb-img" id="eh-thumb-img-a">
               <!-- <div class="eh-thumb-img-item current">
                 <img src="img/mall/products/a1.png" alt="">
               </div>
@@ -68,40 +68,40 @@
           </div>
           <!-- 动态选择商品规格 -->
           <div class="pro_detail-info-sub">
-            <div class="pro-detail-sub-each" id="clearfix-1">
-              <!-- <h3>版本</h3>
-              <div class="pro-detail-sub-each-wrap clearfix">
-                IOS
-              </div> -->
+            <!-- <div class="pro-detail-sub-each" id="clearfix-1">
+              <h3>版本</h3>
+                <div class="pro-detail-sub-each-wrap clearfix">
+                  IOS
+                </div>
             </div>
-            <div class="pro-detail-sub-each " id="clearfix-2">
-              <!-- <h3>颜色</h3>
-              <div class="pro-detail-sub-each-wrap clearfix">
-                黑色
-              </div> -->
-            </div>
+            <div class="pro-detail-sub-each" id="clearfix-2">
+              <h3>颜色</h3>
+                <div class="pro-detail-sub-each-wrap clearfix">
+                  黑色
+                </div>
+            </div> -->
           </div>
           <!-- 选择商品数量 -->
           <div class="eh-pro-info-number">
             <span class="eh-pro-num-txt">数量</span>
-            <a class="eh-pro-info-number-a" href="#" id="yhsd_variantSelector_reduce">-</a>
+            <a class="eh-pro-info-number-a" href="javascript:void(0)" id="yhsd_variantSelector_reduce">-</a>
             <input class="eh-pro-info-number-ipt" type="text" value="1" id="yhsd_variantSelector_count">
-            <a class="eh-pro-info-number-a" href="#" id="yhsd_variantSelector_add">+</a>
+            <a class="eh-pro-info-number-a" href="javascript:void(0);" id="yhsd_variantSelector_add">+</a>
             <span class="eh-pro-stock">
               库存
-              <span id="yhsd_variantSelector_stock">0</span>
+              <span id="yhsd_variantSelector_stock"></span>
               件
             </span>
           </div>
           <!-- 立即购买按钮 -->
           <div class="pro-detail-addBtn">
-				    <a class="eh-pro-btn eh-btn-buynow" id="yhsd_variantSelector_addCart" href="#">加入购物车</a>
+				    <a class="eh-pro-btn eh-btn-buynow" id="yhsd_variantSelector_addCart" href="javascript:void(0)">加入购物车</a>
 				   <!--加入购物车提示-->
     				<div id="yhsd_variantSelector_addSucc" class="pro_detail-info-addSucc--wrap">
     					<div class="pro_detail-info-addSucc">
     						<span class="pro_detail-info-addSucc-hint">添加成功！</span>
-    						<a class="pro_detail-info-addSucc-goCart" href="/cart">去购物车结算</a>
-    						<a class="pro_detail-info-addSucc-close" href="#" id="yhsd_variantSelector_addSuccClose">关闭</a>
+    						<a class="pro_detail-info-addSucc-goCart" href="#">去购物车结算</a>
+    						<a class="pro_detail-info-addSucc-close" href="javascript:void(0)" id="yhsd_variantSelector_addSuccClose">关闭</a>
     					</div>
     				</div>
 			    </div>
@@ -117,9 +117,12 @@
     <script src="js/ajax.js"></script>
     <script src="js/product_details.js"></script>
     <script type="text/javascript">
+    // 商品小图片点击轮播事件
       $(".eh-thumb-img").on("click",".current",function(){
+        var e=$('#eh-thumb-img-a').children('div').length;
+        var s=e-4;
 		    var i=$(this).index()-3;
-		    if(i<=3){
+		    if(i<s){
 			    $(".eh-thumb-img").animate({left:-i * 110 },500);
           $(this).next().addClass("current").siblings().removeClass("current");
           $(".eh-thumb-img-item").next().addClass("eh-thumb-img-item").siblings().removeClass("eh-thumb-img-item");
@@ -133,6 +136,37 @@
           $(".current").prev().addClass("current").siblings().removeClass("current");
 		    }
       });
+      // 商品小图片边框点击事件
+      $(".eh-thumb-img").on("click","div",function () {
+      $(this).addClass("img-border").siblings().removeClass("img-border");
+      // 商品大图随小图事件
+      var img=$(this).children("img").attr("src");
+      $(".eh-pro-image img").attr("src",img);
+      });
+      // 商品选取规格边框点击事件
+      $(".pro_detail-info-sub").on("click",".pro-detail-sub-each div",function () {
+        console.log(1);
+      $(this).addClass("clearfix").siblings().removeClass("clearfix");
+      });
+      // 商品加减事件
+      $("#yhsd_variantSelector_reduce").click(function () {
+        var input1=$("#yhsd_variantSelector_count").val();
+        var input=Number(input1);
+        if(input>1){input--;}
+        $("#yhsd_variantSelector_count").val(input);
+      })
+      $("#yhsd_variantSelector_add").click(function () {
+        var input2=$("#yhsd_variantSelector_count").val();
+        var input=Number(input2);
+        input++;
+        $("#yhsd_variantSelector_count").val(input);
+      })
+      $("#yhsd_variantSelector_addCart").click(function () {
+        $(".pro_detail-info-addSucc").css("display","inline-block")
+      })
+      $("#yhsd_variantSelector_addSuccClose").click(function () {
+        $(".pro_detail-info-addSucc").css("display","none")
+      })
     </script>
   </body>
 </html>

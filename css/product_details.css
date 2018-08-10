@@ -21,7 +21,8 @@
 }
 .eh-pro-detail{
   height: 630px;
-  margin: 0px 0px 60px 0px;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
   background: #fff;
   display: flex;
   justify-content: space-between;
@@ -37,6 +38,10 @@
   height: 440px;
   padding: 10px 50px;
   cursor:pointer;
+}
+.eh-pro-image img{
+  width: 100%;
+  height: 100%;
 }
 .eh-thumb-img-wrap{
   width: 550px;
@@ -108,33 +113,40 @@
   font-size: 14px;
 }
 .pro-detail-sub-each{
-  height: 89px;
+  height: 120px;
 }
 .pro-detail-sub-each h3{
   color: rgb(119, 119, 119);
   font-size: 14px;
   font-weight: 400;
-  margin: 15px 0 10px 0;
+  margin: 10px 0px;
 }
 .pro-detail-sub-each-wrap{
   width: 218px;
   height: 38px;
-  color: rgb(4, 159, 241);
+  color: rgba(145,145,145,1);
   font-size: 14px;
   line-height: 38px;
   text-align: center;
   border-radius: 4px;
-  border: 1px solid rgb(4, 159, 241);
+  border: 1px solid rgb(226, 226, 226);
   float: left;
-  overflow: hidden;
+  margin: 0px 40px 10px 0px;
+  cursor:pointer;
+}
+.pro-detail-sub-each-wrap:hover{
+  color: rgba(130,130,130,1);
+  border: 1px solid rgba(180,180,180,1);
+}
+.clearfix{
+  color: #049ff1 !important;
+  border: 1px solid #049ff1 !important;
 }
 .eh-pro-info-number{
   height: 30px;
-}
-.eh-pro-info-number{
   color: rgb(119, 119, 119);
   font-size: 14px;
-  padding: 15px 0;
+  margin: 15px 0;
 }
 .eh-pro-num-txt{
   padding-right: 15px;
@@ -201,7 +213,9 @@
   padding: 2px;
   border-radius: 2px;
 }
-
+.img-border{
+  border: 1px solid rgb(4, 159, 241)!important;
+}
 
 
 

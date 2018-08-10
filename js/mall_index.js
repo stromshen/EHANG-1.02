@@ -16,18 +16,18 @@
           b++;
           html2+=`<div class="eh-pro-item">
               <div class="pro-img-wrap">
-              <a href="#" title="${shop_name}">
+              <a href="product_details.html" title="${shop_name}">
                <img src="${shop_img}" alt="">
               </a>
               </div>
               <div class="eh-pro-desc">
                 <h6>
-                  <a href="#" title="${shop_name}">${shop_name}</a>
+                  <a href="product_details.html" title="${shop_name}">${shop_name}</a>
                 </h6>
                 <div class="small-info">${shop_title}</div>
                 <div class="pro-buy-now">
                    ￥${shop_price}
-                  <a href="">立即购买</a>
+                  <a href="product_details.html">立即购买</a>
                 </div>
               </div>
             </div>`
@@ -37,18 +37,18 @@
           c++;
           html3+=`<div class="eh_pro_parts">
             <div class="pro-img-parts">
-            <a href="#" title="${shop_name}">
+            <a href="product_details.html" title="${shop_name}">
              <img src="${shop_img}" alt="">
             </a>
             </div>
             <div class="eh-pro-desc">
               <h6>
-                <a href="#" title="${shop_name}">${shop_name}</a>
+                <a href="product_details.html" title="${shop_name}">${shop_name}</a>
               </h6>
               <div class="small-info">${shop_title}</div>
               <div class="pro-buy-now">
                 ￥${shop_price}
-                <a href="">立即购买</a>
+                <a href="product_details.html">立即购买</a>
               </div>
             </div>
           </div>`
